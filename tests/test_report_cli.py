@@ -127,7 +127,7 @@ def test_cli_version_and_help(capsys: pytest.CaptureFixture[str]) -> None:
     with pytest.raises(SystemExit) as stop:
         main(["--version"])
     assert stop.value.code == 0
-    assert "loganomaly 1.0.0" in capsys.readouterr().out
+    assert "loganomaly 1.0.1" in capsys.readouterr().out
 
 
 def test_cli_generate_and_evaluate(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:

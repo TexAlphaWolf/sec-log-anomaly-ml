@@ -170,3 +170,24 @@ def test_evaluate_spec_end_to_end() -> None:
         assert r.model_kb >= 0
     assert ev.get("vote").name == "vote"
     assert ev.test_days > 0
+
+
+def test_vote_ratio_is_above_one_exactly_when_flagged(bundle: Bundle, events: list[Event]) -> None:
+    analysis = analyse(bundle, events[:20000])
+    flagged = analysis.flags["vote"]
+    assert flagged.any()
+    assert (analysis.ratios["vote"][flagged] > 1).all()
+    assert (analysis.ratios["vote"][~flagged] <= 1).all()
+
+
+def test_python_dash_m_entry_point() -> None:
+    import subprocess
+    import sys
+
+    out = subprocess.run(
+        [sys.executable, "-m", "loganomaly", "--version"],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    assert "loganomaly" in out.stdout

@@ -30,3 +30,7 @@ model/
 *.jsonl
 !tests/**/*.jsonl
 !docs/**/*.jsonl
+
+demo/
+mymodel/
+mio-report.html

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "loganomaly"
-version = "1.0.0"
+version = "1.0.1"
 description = "Unsupervised anomaly detection on auth, web and Windows logs: a light model and a neural one, compared on the same data."
 readme = "README.md"
 requires-python = ">=3.11"

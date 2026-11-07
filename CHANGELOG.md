@@ -4,6 +4,17 @@ All notable changes are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [semantic versioning](https://semver.org/).
 
+## [1.0.1] - 2026-11-07
+
+### Fixed
+- The combined vote showed a ratio below 1 ("x0.9") for windows it flagged, because it averaged
+  the three detectors. It now uses the second-highest ratio, which is above 1 exactly when two
+  detectors flag the window. Which windows are flagged is unchanged; the ranking metrics of the
+  vote moved (ROC AUC 0.996 to 0.992 on the benchmark) and the results are regenerated.
+
+### Added
+- `python -m loganomaly`, for Windows installs where the `loganomaly` script is not on `PATH`.
+
 ## [1.0.0] - 2026-11-07
 
 ### Added

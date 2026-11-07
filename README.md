@@ -38,6 +38,9 @@ pip install .
 loganomaly demo --out demo        # about 15 seconds
 ```
 
+On Windows, `pip install` often puts `loganomaly.exe` in a folder that is not on `PATH`. Use
+`python -m loganomaly demo --out demo` instead; every command below works that way too.
+
 ### On your own logs
 
 ```bash
@@ -58,9 +61,9 @@ per-attack recall and cost: [docs/results.md](docs/results.md).
 |---|---|---|---|---|---|
 | z-score baseline | 0.994 | 0.71 | 0.70 | 3.7 | 71 % |
 | Isolation Forest | 0.988 | 0.51 | 0.41 | 5.0 | 55 % |
-| Autoencoder | 0.995 | 0.63 | **0.87** | 6.8 | **92 %** |
+| Autoencoder | **0.995** | 0.63 | **0.87** | 6.8 | **92 %** |
 | Next-event network | 0.938 | 0.47 | 0.31 | 4.6 | 36 % |
-| Vote (2 of 3) | **0.996** | **0.77** | 0.58 | **2.3** | 70 % |
+| Vote (2 of 3) | 0.992 | **0.77** | 0.58 | **2.3** | 70 % |
 
 What I take from it:
 

@@ -59,7 +59,9 @@ class Analysis:
             votes = sum(self.flags[n].astype(int) for n in learned)
             need = 2
             self.flags["vote"] = np.asarray(votes >= need)
-            self.ratios["vote"] = np.mean([self.ratios[n] for n in learned], axis=0)
+            # The second-highest ratio is above 1 exactly when two detectors flag the window,
+            # so an alert never shows a ratio below the threshold.
+            self.ratios["vote"] = np.sort([self.ratios[n] for n in learned], axis=0)[-2]
             self.scores["vote"] = self.ratios["vote"]
             self.thresholds["vote"] = 1.0
 
