@@ -91,7 +91,7 @@ model. See [architecture](docs/architecture.md), [features](docs/features.md) an
 
 ## Quality and security
 
-- 92 tests, 98 % coverage; the autoencoder's gradients are checked against finite differences and
+- 94 tests, 98 % coverage; the autoencoder's gradients are checked against finite differences and
   the Isolation Forest against scikit-learn's.
 - CI on Python 3.11 to 3.14: ruff, mypy, pytest, a **model quality gate** (the build fails if the
   detectors get clearly worse), the Docker image and the demo inside it, CodeQL, `pip-audit`.
